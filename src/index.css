@@ -1,19 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
 @import "tailwindcss";
 @theme {
-  --color-primary: #030412;
-  --color-midnight: #06091f;
-  --color-navy: #161a31;
-  --color-indigo: #1f1e39;
-  --color-storm: #282b4b;
-  --color-aqua: #33c2cc;
-  --color-mint: #57db96;
-  --color-royal: #5c33cc;
-  --color-lavender: #7a57db;
-  --color-fuchsia: #ca2f8c;
-  --color-orange: #cc6033;
-  --color-sand: #d6995c;
-  --color-coral: #ea4884;
+  --color-primary: #0a0a0f;
+  --color-midnight: #1a1a2e;
+  --color-navy: #16213e;
+  --color-indigo: #0f3460;
+  --color-storm: #533483;
+  --color-aqua: #00d4aa;
+  --color-mint: #7fffd4;
+  --color-royal: #6a4c93;
+  --color-lavender: #c06c84;
+  --color-fuchsia: #f67280;
+  --color-orange: #f8b500;
+  --color-sand: #ffd23f;
+  --color-coral: #ff6b6b;
   --animate-orbit: orbit 50s linear infinite;
   @keyframes orbit {
     0% {
@@ -47,6 +47,10 @@
     }
   }
 }
+html {
+  scroll-padding-top: 80px; /* Adjust based on navbar height */
+}
+
 body {
   background: #030412;
   font-family: "Funnel Display", sans-serif;
@@ -76,7 +80,7 @@ body {
 }
 
 .subtext {
-  @apply text-neutral-400 text-sm md:text-base text-pretty;
+  @apply text-white text-sm md:text-base text-pretty;
 }
 
 /* Navigation */
@@ -97,31 +101,77 @@ body {
 }
 
 /* About Section */
-.grid-1 {
-  @apply row-span-2 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
-}
-.grid-2 {
-  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
-}
-.grid-3 {
-  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
-}
-.grid-4 {
-  @apply row-span-1 md:col-span-2 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
-}
-.grid-5 {
-  @apply row-span-1 md:col-span-4 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+.grid-1-new {
+  @apply row-span-2 md:col-span-4 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl;
 }
 
-.grid-default-color {
-  @apply p-6 bg-gradient-to-b from-storm to-indigo rounded-2xl;
+.grid-2-new {
+  @apply row-span-2 md:col-span-2 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl;
 }
 
-.grid-special-color {
-  @apply p-6 bg-gradient-to-b from-royal to-lavender rounded-2xl;
+.grid-3-new {
+  @apply row-span-1 md:col-span-2 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl flex items-center justify-around;
 }
-.grid-black-color {
-  @apply p-6 bg-gradient-to-tl from-[#3A3A3A] via-[#242424] to-[#3A3A3A] rounded-2xl;
+
+.grid-4-new {
+  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl;
+}
+
+.grid-5-new {
+  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl;
+}
+
+.grid-6-new {
+  @apply row-span-2 md:col-span-2 h-[10rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl;
+}
+
+/* New Color Schemes */
+.grid-gradient-purple {
+  @apply bg-gradient-to-br from-royal/80 via-lavender/60 to-fuchsia/40 backdrop-blur-sm border border-white/10;
+}
+
+.grid-glass-effect {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.grid-neon-border {
+  @apply bg-gradient-to-r from-storm/50 to-navy/50 border-2 border-aqua/30 shadow-lg shadow-aqua/20;
+}
+
+.grid-dark-glass {
+  @apply bg-gradient-to-tl from-midnight/80 via-navy/60 to-indigo/40 backdrop-blur-sm border border-mint/20;
+}
+
+.grid-location {
+  @apply bg-gradient-to-r from-orange/20 via-coral/20 to-fuchsia/20 backdrop-blur-sm border border-coral/30;
+}
+
+.grid-cta {
+  @apply bg-gradient-to-b from-royal via-lavender to-fuchsia backdrop-blur-sm border border-lavender/50 hover:shadow-xl hover:shadow-lavender/30 transition-all duration-300;
+}
+
+/* Floating animations */
+.floating-tech-icon {
+  @apply w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110;
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-tech-icon:nth-child(2) {
+  animation-delay: -1s;
+}
+
+.floating-tech-icon:nth-child(3) {
+  animation-delay: -2s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Skill bars */
+.skill-bar {
+  @apply space-y-1;
 }
 
 /* Contact Section*/

@@ -1,25 +1,54 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 function Navigation() {
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else if (targetId === 'home') {
+      window.scrollTo({ top: 10, behavior: 'smooth' });
+    }
+  };
+
   return (
     <ul className="nav-ul">
       <li className="nav-li">
-        <a className="nav-link" href="#home">
+        <a 
+          className="nav-link" 
+          href="#home"
+          onClick={(e) => handleNavClick(e, 'home')}
+        >
           Home
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#about">
+        <a 
+          className="nav-link" 
+          href="#about"
+          onClick={(e) => handleNavClick(e, 'about')}
+        >
           About
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#work">
+        <a 
+          className="nav-link" 
+          href="#work"
+          onClick={(e) => handleNavClick(e, 'work')}
+        >
           Work
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#contact">
+        <a 
+          className="nav-link" 
+          href="#contact"
+          onClick={(e) => handleNavClick(e, 'contact')}
+        >
           Contact
         </a>
       </li>
@@ -35,8 +64,12 @@ const Navbar = () => {
           <a
             href="/"
             className="text-xl font-bold transition-colors text-neutral-400 hover:text-white"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
           >
-            Ali
+            ARYAN
           </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
