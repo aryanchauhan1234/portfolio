@@ -44,7 +44,7 @@ const Hero = () => {
     }
   }, [charIndex, lineIndex]);
   return (
-    <section id="home" className="relative flex items-center justify-center min-h-screen overflow-hidden c-space">
+    <section id="home" className="relative flex items-center justify-center min-h-screen overflow-hidden c-space ">
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-aqua rounded-full animate-pulse"></div>

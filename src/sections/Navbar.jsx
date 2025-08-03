@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion'; // ✅ correct library
+import { motion } from 'framer-motion';
 
 function Navigation() {
   const handleNavClick = (e, targetId) => {
@@ -11,42 +11,42 @@ function Navigation() {
         block: 'start',
       });
     } else if (targetId === 'home') {
-      window.scrollTo({ top: 10, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   return (
-    <ul className="nav-ul">
-      <li className="nav-li">
+    <ul className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center text-neutral-300 ">
+      <li>
         <a
-          className="nav-link"
+          className="hover:text-white transition-colors"
           href="#home"
           onClick={(e) => handleNavClick(e, 'home')}
         >
           Home
         </a>
       </li>
-      <li className="nav-li">
+      <li>
         <a
-          className="nav-link"
+          className="hover:text-white transition-colors"
           href="#about"
           onClick={(e) => handleNavClick(e, 'about')}
         >
           About
         </a>
       </li>
-      <li className="nav-li">
+      <li>
         <a
-          className="nav-link"
+          className="hover:text-white transition-colors"
           href="#work"
           onClick={(e) => handleNavClick(e, 'work')}
         >
           Work
         </a>
       </li>
-      <li className="nav-li">
+      <li>
         <a
-          className="nav-link"
+          className="hover:text-white transition-colors"
           href="#contact"
           onClick={(e) => handleNavClick(e, 'contact')}
         >
@@ -61,12 +61,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed inset-x-0 z-20 w-full backdrop-blur-lg bg-primary/40">
-      <div className="mx-auto c-space max-w-7xl">
-        <div className="flex items-center justify-between py-2 sm:py-0">
+    <div className=" w-full backdrop-blur-lg bg-primary/40 rounded-b-2xl shadow-md ">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-4">
           <a
             href="/"
-            className="text-xl font-bold transition-colors text-neutral-400 hover:text-white"
+            className="text-xl font-bold text-neutral-400 hover:text-white hidden sm:block"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -74,16 +74,18 @@ const Navbar = () => {
           >
             ARYAN
           </a>
+
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none sm:hidden"
+            className="sm:hidden text-neutral-400 hover:text-white focus:outline-none"
           >
             <img
               src={isOpen ? 'assets/close.svg' : 'assets/menu.svg'}
               className="w-6 h-6"
-              alt="toggle"
+              alt="menu"
             />
           </button>
+
           <nav className="hidden sm:flex">
             <Navigation />
           </nav>
@@ -92,15 +94,12 @@ const Navbar = () => {
 
       {isOpen && (
         <motion.div
-          className="block overflow-hidden text-center sm:hidden"
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          style={{ maxHeight: '100vh' }}
-          transition={{ duration: 1 }}
+          className="sm:hidden bg-primary/90 rounded-b-2xl px-4 py-4 shadow-lg"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
         >
-          <nav className="pb-5">
-            <Navigation />
-          </nav>
+          <Navigation />
         </motion.div>
       )}
     </div>
