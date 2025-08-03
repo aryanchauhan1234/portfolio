@@ -7,7 +7,7 @@ const About = () => {
       <div className="grid grid-cols-1 gap-6 mt-12 md:grid-cols-8 md:auto-rows-[16rem]">
 
         {/* Grid 1 - Intro */}
-        <div className="grid-glass-effect grid-gradient-purple col-span-1 md:col-span-5 flex flex-col sm:flex-row items-center sm:items-start gap-6 p-6 rounded-xl">
+        <div className="grid-glass-effect grid-gradient-purple col-span-1 md:col-span-5 flex flex-col sm:flex-row items-center sm:items-start gap-6 p-6 rounded-2xl">
           {/* Avatar */}
           <div className="relative w-28 h-28 sm:w-32 sm:h-32 shrink-0">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-aqua to-mint animate-pulse" />
@@ -38,7 +38,7 @@ const About = () => {
         </div>
 
         {/* Grid 2 - Skills */}
-        <div className="grid-glass-effect col-span-1 md:col-span-3 flex flex-col justify-center p-5">
+        <div className="grid-glass-effect col-span-1 md:col-span-3 flex flex-col justify-center p-20  rounded-2xl">
           <h3 className="text-lg font-semibold mb-4">MERN Stack Expertise</h3>
           <div className="space-y-3">
             {[
@@ -46,7 +46,7 @@ const About = () => {
               ["Express.js & REST APIs", 90, "from-gray-600 to-gray-500"],
               ["React.js & Custom Hooks", 95, "from-blue-500 to-blue-400"],
               ["Node.js & NPM", 88, "from-green-600 to-green-500"],
-              ["WebSockets & Realtime", 68, "from-red-600 to-red-500"],
+              // ["WebSockets & Realtime", 68, "from-red-600 to-red-500"],
             ].map(([label, percent, gradient], i) => (
               <div key={i}>
                 <span className="text-sm">{label}</span>
@@ -62,7 +62,7 @@ const About = () => {
         </div>
 
         {/* Grid 3 - Stats */}
-        <div className="grid-glass-effect col-span-1 md:col-span-2 grid grid-cols-2 text-center items-center p-6 gap-4">
+        <div className="grid-glass-effect col-span-1 md:col-span-2 grid grid-cols-2 text-center items-center p-6 gap-4 rounded-2xl">
           <div>
             <div className="text-3xl font-bold text-aqua mb-1">10+</div>
             <p className="text-sm text-neutral-400">Full-Stack Projects</p>
@@ -74,21 +74,21 @@ const About = () => {
         </div>
 
         {/* Grid 4 - Currently Working */}
-        <div className="grid-glass-effect col-span-1 md:col-span-6 flex gap-4 p-6 items-start grid-gradient-purple">
-          <div className="w-12 h-12 flex items-center justify-center text-xl">🚀</div>
+        <div className="grid-glass-effect col-span-1 md:col-span-6 flex gap-4 p-6 items-start grid-gradient-purple  rounded-2xl ">
+          {/* <div className="w-12 h-12 flex items-center justify-center text-xl">🚀</div> */}
           <div>
-            <p className="headtext mb-1">Currently Innovating</p>
-            <p className="subtext">
+            <p className="text-3xl mb-[3%] mt-[3%]">Currently Innovating</p>
+            <p className="text-xl">
               Building real-time apps, open-source tools, and refining full-stack systems for scale.
             </p>
-            <p className="subtext text-xs text-white/60 mt-2">
+            <p className="text-xl text- text-white/60 mt-2">
               Open to collaboration for meaningful, performance-driven tech.
             </p>
           </div>
         </div>
 
         {/* Grid 5 - Tech Stack */}
-        <div className="grid-glass-effect col-span-1 md:col-span-2 p-6 relative overflow-hidden">
+        <div className="grid-glass-effect col-span-1 md:col-span-2 p-6 relative overflow-hidden  rounded-2xl">
           <h3 className="text-lg font-semibold mb-4">Tech Stack Visualized</h3>
           <div className="grid grid-cols-2 gap-4">
             {[
@@ -105,7 +105,7 @@ const About = () => {
         </div>
 
         {/* Grid 6 - CTA */}
-        <div className="grid-glass-effect col-span-1 md:col-span-6 group cursor-pointer p-6 text-center">
+        <div className="grid-glass-effect col-span-1 md:col-span-6 group cursor-pointer p-6 text-center  rounded-2xl">
           <div className="flex flex-col items-center justify-center h-full">
             <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <span className="text-2xl">💬</span>
