@@ -1,13 +1,14 @@
-import { useState } from "react";
-import { motion } from "motion/react";
+import { useState } from 'react';
+import { motion } from 'framer-motion'; // ✅ correct library
+
 function Navigation() {
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({ 
+      targetElement.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       });
     } else if (targetId === 'home') {
       window.scrollTo({ top: 10, behavior: 'smooth' });
@@ -17,8 +18,8 @@ function Navigation() {
   return (
     <ul className="nav-ul">
       <li className="nav-li">
-        <a 
-          className="nav-link" 
+        <a
+          className="nav-link"
           href="#home"
           onClick={(e) => handleNavClick(e, 'home')}
         >
@@ -26,8 +27,8 @@ function Navigation() {
         </a>
       </li>
       <li className="nav-li">
-        <a 
-          className="nav-link" 
+        <a
+          className="nav-link"
           href="#about"
           onClick={(e) => handleNavClick(e, 'about')}
         >
@@ -35,8 +36,8 @@ function Navigation() {
         </a>
       </li>
       <li className="nav-li">
-        <a 
-          className="nav-link" 
+        <a
+          className="nav-link"
           href="#work"
           onClick={(e) => handleNavClick(e, 'work')}
         >
@@ -44,8 +45,8 @@ function Navigation() {
         </a>
       </li>
       <li className="nav-li">
-        <a 
-          className="nav-link" 
+        <a
+          className="nav-link"
           href="#contact"
           onClick={(e) => handleNavClick(e, 'contact')}
         >
@@ -55,8 +56,10 @@ function Navigation() {
     </ul>
   );
 }
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="fixed inset-x-0 z-20 w-full backdrop-blur-lg bg-primary/40">
       <div className="mx-auto c-space max-w-7xl">
@@ -76,7 +79,7 @@ const Navbar = () => {
             className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none sm:hidden"
           >
             <img
-              src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
+              src={isOpen ? 'assets/close.svg' : 'assets/menu.svg'}
               className="w-6 h-6"
               alt="toggle"
             />
@@ -86,12 +89,13 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
+
       {isOpen && (
         <motion.div
           className="block overflow-hidden text-center sm:hidden"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
-          style={{ maxHeight: "100vh" }}
+          style={{ maxHeight: '100vh' }}
           transition={{ duration: 1 }}
         >
           <nav className="pb-5">
