@@ -1,7 +1,4 @@
-import { useMediaQuery } from "react-responsive";
-
 const Hero = () => {
-  const isMobile = useMediaQuery({ maxWidth: 853 });
   return (
     <section id="home" className="relative flex items-center justify-center min-h-screen overflow-hidden c-space">
       {/* Animated background particles */}
