@@ -76,15 +76,15 @@ const Navbar = () => {
           </a>
 
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="sm:hidden text-neutral-400 hover:text-white focus:outline-none"
-          >
-            <img
-              src={isOpen ? 'assets/close.svg' : 'assets/menu.svg'}
-              className="w-6 h-6"
-              alt="menu"
-            />
-          </button>
+          onClick={() => setIsOpen(!isOpen)}
+          className="sm:hidden text-neutral-400 hover:text-white focus:outline-none hidden sm:block"
+        >
+          <img
+            src={isOpen ? 'assets/close.svg' : 'assets/menu.svg'}
+            className="w-6 h-6"
+            alt="menu"
+          />
+        </button>
 
           <nav className="hidden sm:flex">
             <Navigation />
