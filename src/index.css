@@ -62,6 +62,9 @@ body {
 .c-space {
   @apply sm:px-10 px-5 lg:px-15;
 }
+.cursor-pointer {
+  cursor: pointer !important;
+}
 
 .hover-animation {
   @apply hover:-translate-y-1 duration-200;
@@ -102,7 +105,7 @@ body {
 
 /* About Section */
 .grid-1-new {
-  @apply row-span-2 md:col-span-4 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl;
+  @apply row-span-1 md:col-span-6 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl ;
 }
 
 .grid-2-new {
@@ -113,12 +116,12 @@ body {
   @apply row-span-1 md:col-span-2 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl flex items-center justify-around;
 }
 
-.grid-4-new {
-  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl;
-}
 
+.grid-4-new {
+  @apply row-span-1 md:col-span-2 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl;
+}
 .grid-5-new {
-  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl;
+  @apply row-span-1 md:col-span-4 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-300 p-6 rounded-2xl;
 }
 
 .grid-6-new {
@@ -126,9 +129,9 @@ body {
 }
 
 /* New Color Schemes */
-.grid-gradient-purple {
+/* .grid-gradient-purple {
   @apply bg-gradient-to-br from-royal/80 via-lavender/60 to-fuchsia/40 backdrop-blur-sm border border-white/10;
-}
+} */
 
 .grid-glass-effect {
   @apply bg-white/5 backdrop-blur-md border border-white/10;
@@ -142,9 +145,9 @@ body {
   @apply bg-gradient-to-tl from-midnight/80 via-navy/60 to-indigo/40 backdrop-blur-sm border border-mint/20;
 }
 
-.grid-location {
+/* .grid-location {
   @apply bg-gradient-to-r from-orange/20 via-coral/20 to-fuchsia/20 backdrop-blur-sm border border-coral/30;
-}
+} */
 
 .grid-cta {
   @apply bg-gradient-to-b from-royal via-lavender to-fuchsia backdrop-blur-sm border border-lavender/50 hover:shadow-xl hover:shadow-lavender/30 transition-all duration-300;
