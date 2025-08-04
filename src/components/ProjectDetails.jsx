@@ -10,35 +10,35 @@ const ProjectDetails = ({
   closeModal,
 }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto p-2 sm:p-4 backdrop-blur-sm">
       <motion.div
-        className="relative w-full max-w-2xl border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
+        className="relative w-full max-w-[95%] sm:max-w-2xl border shadow-sm rounded-xl sm:rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
       >
         {/* Close Button */}
         <button
           onClick={closeModal}
-          className="absolute p-2 rounded-sm top-4 right-4 bg-midnight hover:bg-gray-500 z-10"
+          className="absolute p-1 sm:p-2 rounded-sm top-3 right-3 sm:top-4 sm:right-4 bg-midnight hover:bg-gray-500 z-10"
         >
-          <img src="assets/close.svg" className="w-6 h-6" alt="close" />
+          <img src="assets/close.svg" className="w-5 h-5 sm:w-6 sm:h-6" alt="close" />
         </button>
 
         {/* Image */}
         <img
           src={image}
           alt={title}
-          className="w-full rounded-t-2xl max-h-[50vh] object-cover"
+          className="w-full max-h-[40vh] object-cover rounded-t-xl sm:rounded-t-2xl"
         />
 
         {/* Content */}
-        <div className="p-5">
-          <h5 className="mb-2 text-2xl font-bold text-white">{title}</h5>
-          <p className="mb-3 font-normal text-neutral-400">{description}</p>
+        <div className="p-3 sm:p-5">
+          <h5 className="mb-2 text-lg sm:text-2xl font-bold text-white">{title}</h5>
+          <p className="mb-2 text-sm sm:text-base text-neutral-400">{description}</p>
           {subDescription.map((subDesc, index) => (
             <p
               key={index}
-              className="mb-3 font-normal text-neutral-400 text-sm sm:text-base"
+              className="mb-2 text-sm sm:text-base text-neutral-400"
             >
               {subDesc}
             </p>
@@ -53,7 +53,7 @@ const ProjectDetails = ({
                   key={tag.id}
                   src={tag.path}
                   alt={tag.name}
-                  className="rounded-lg size-10 hover-animation"
+                  className="rounded-lg size-8 sm:size-10 hover-animation"
                 />
               ))}
             </div> 
@@ -63,10 +63,10 @@ const ProjectDetails = ({
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation text-white"
+              className="inline-flex items-center gap-1 text-sm sm:text-base font-medium cursor-pointer hover-animation text-white"
             >
               View Project
-              <img src="assets/arrow-up.svg" className="size-4" alt="arrow" />
+              <img src="assets/arrow-up.svg" className="w-4 h-4" alt="arrow" />
             </a>
           </div>
         </div>
