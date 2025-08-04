@@ -61,7 +61,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className=" w-full backdrop-blur-lg bg-primary/40 rounded-b-2xl shadow-md ">
+    <div className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-primary/40 rounded-b-2xl shadow-md">
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           <a
@@ -77,7 +78,7 @@ const Navbar = () => {
 
           <button
           onClick={() => setIsOpen(!isOpen)}
-          className="sm:hidden text-neutral-400 hover:text-white focus:outline-none hidden sm:block"
+          className="sm:hidden text-neutral-400 hover:text-white focus:outline-none "
         >
           <img
             src={isOpen ? 'assets/close.svg' : 'assets/menu.svg'}
