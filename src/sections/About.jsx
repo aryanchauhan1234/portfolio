@@ -63,15 +63,21 @@ const About = () => {
 
         {/* Grid 3 - Stats */}
         <div className="grid-glass-effect col-span-1 md:col-span-2 grid grid-cols-2 text-center items-center p-6 gap-4 rounded-2xl">
-          <div>
-            <div className="text-3xl font-bold text-aqua mb-1">10+</div>
-            <p className="text-sm text-neutral-400">Full-Stack Projects</p>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-mint mb-1">1+</div>
-            <p className="text-sm text-neutral-400">Years Experience</p>
-          </div>
-        </div>
+  <div>
+    <div className="text-3xl font-bold text-aqua mb-1">10+</div>
+    <p className="text-sm text-neutral-400">Full-Stack Projects</p>
+  </div>
+  <div>
+    <div className="text-3xl font-bold text-aqua mb-1">100+</div>
+    <p className="text-sm text-neutral-400">Hours of Coding</p>
+  </div>
+</div>
+
+
+
+
+
+
 
         {/* Grid 4 - Currently Working */}
         <div className="grid-glass-effect col-span-1 md:col-span-6 flex gap-4 p-6 items-start grid-gradient-purple  rounded-2xl ">
