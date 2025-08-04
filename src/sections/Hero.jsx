@@ -4,6 +4,43 @@ import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
 const Hero = () => {
+
+  const [isRunningCode, setIsRunningCode] = useState(false);
+const [runOutput, setRunOutput] = useState([]);
+
+  const handleRunCode = () => {
+    if (isRunningCode) return;
+
+    setIsRunningCode(true);
+    setRunOutput([]);
+
+    const sequence = [
+      "$ run about",
+      "> Compiling...",
+      "> Build successful!",
+      "> Redirecting..."
+    ];
+
+    let i = 0;
+    const interval = setInterval(() => {
+      setRunOutput(prev => [...prev, sequence[i]]);
+      i++;
+
+      if (i === sequence.length) {
+        clearInterval(interval);
+        setTimeout(() => {
+          const aboutSection = document.getElementById("about");
+          if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: "smooth" });
+          }
+          setIsRunningCode(false);
+          setRunOutput([]);
+        }, 1000); // pause before scrolling
+      }
+    }, 300);
+  };
+
+
   const navigate = useNavigate();
   const terminalLines = [
     { type: "command", text: "$ i am" },
@@ -91,15 +128,21 @@ const Hero = () => {
         <div className="relative">
           <div className="relative w-full h-fit min-h-96 rounded-2xl bg-gradient-to-br from-midnight/90 to-navy/80 backdrop-blur-sm border border-mint/20 overflow-hidden">
             {/* Run Code Button */}
+            {/* <button
+              onClick={() => {
+                const el = document.getElementById("about");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="absolute top-1.5 right-4 px-4 py-2 bg-aqua text-black font-semibold rounded-full shadow hover:bg-mint transition"
+            >
+              Run Code
+            </button> */}
             <button
-  onClick={() => {
-    const el = document.getElementById("about");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  }}
-  className="absolute top-1.5 right-4 px-4 py-2 bg-aqua text-black font-semibold rounded-full shadow hover:bg-mint transition"
->
-  Run Code
-</button>
+              onClick={handleRunCode}
+              className="absolute top-1.5 right-4 px-4 py-2 bg-aqua text-black font-semibold rounded-full shadow hover:bg-mint transition"
+            >
+              Run Code
+            </button>
             {/* Terminal Header */}
             <div className="flex items-center gap-2 p-4 border-b border-white/10">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -110,31 +153,39 @@ const Hero = () => {
 
             {/* Terminal Content */}
             <div className="p-4 font-mono text-sm text-white space-y-1">
-              {displayedLines.map((line, idx) => (
-                <div
-                  key={idx}
-                  className={
-                    line.type === "command" ? "text-mint" :
-                      line.type === "output" ? "text-white" : ""
-                  }
-                >
-                  {line.text}
-                </div>
-              ))}
-              {lineIndex < terminalLines.length && (
-                <div
-                  className={
-                    terminalLines[lineIndex].type === "command"
-                      ? "text-mint"
-                      : "text-aqua"
-                  }
-                >
-                  {currentLine}
-                  <span className="animate-pulse">|</span>
-                </div>
-              )}
-              {!isTyping && <div className="text-mint animate-pulse">$ _</div>}
-            </div>
+  {displayedLines.map((line, idx) => (
+    <div
+      key={idx}
+      className={`${
+        line.type === "command" ? "text-mint" : "text-white"
+      } ${line.type === "output" ? "mt-1" : ""}`}
+    >
+      {line.text}
+    </div>
+  ))}
+
+  {lineIndex < terminalLines.length && (
+    <div
+      className={`${
+        terminalLines[lineIndex].type === "command"
+          ? "text-mint"
+          : "text-aqua mt-1"
+      }`}
+    >
+      {currentLine}
+      <span className="animate-pulse">|</span>
+    </div>
+  )}
+
+  {!isTyping && <div className="text-mint animate-pulse">$ _</div>}
+
+  {runOutput.map((line, index) => (
+    <div key={`run-${index}`} className="text-aqua mt-2">
+      {line}
+    </div>
+  ))}
+</div>
+
 
           </div>
         </div>
