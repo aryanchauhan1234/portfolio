@@ -12,7 +12,7 @@ const About = () => {
           <div className="relative w-28 h-28 sm:w-32 sm:h-32 shrink-0">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-aqua to-mint animate-pulse" />
             <img
-              src="assets/photo.jpeg"
+              src="assets/photo.jpg"
               alt="Avatar"
               className="relative z-10 w-full h-full object-cover rounded-full border-2 border-mint"
             />
