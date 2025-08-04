@@ -120,7 +120,7 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            className="w-full px-1 py-3 text-lg text-center rounded-md cursor-pointer bg-radial from-lavender to-royal hover-animation"
+            className="w-full px-1 py-3 text-lg text-center rounded-md bg-gradient-to-r from-aqua to-mint  cursor-pointerhover-animation"
           >
             {!isLoading ? "Send" : "Sending..."}
           </button>
