@@ -26,11 +26,13 @@ const About = () => {
                 ARYAN
               </span>
             </p>
-            <p className="subtext">
-              A passionate full-stack developer with strong MERN stack focus. I love building seamless, performant, and responsive web experiences.
-            </p>
+           <p className="subtext">
+  A passionate full-stack developer with a strong MERN stack focus, committed to crafting seamless, performant, and responsive web experiences.
+  I bring a unique blend of analytical thinking, problem-solving skills, and technical expertise. 
+</p>
+
             <div className="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
-              <span className="px-3 py-1 text-xs rounded-full bg-white/10">Open to Freelance</span>
+              {/* <span className="px-3 py-1 text-xs rounded-full bg-white/10">Open to Freelance</span> */}
               <span className="px-3 py-1 text-xs rounded-full bg-white/10">Always Learning</span>
               <span className="px-3 py-1 text-xs rounded-full bg-white/10">Building Side Projects</span>
             </div>
@@ -43,9 +45,9 @@ const About = () => {
           <div className="space-y-3">
             {[
               ["MongoDB & Mongoose", 85, "from-green-500 to-green-400"],
-              ["Express.js & REST APIs", 90, "from-gray-600 to-gray-500"],
+              ["Express.js & REST APIs", 90, "from-red-500 to-red-400"],
               ["React.js & Custom Hooks", 95, "from-blue-500 to-blue-400"],
-              ["Node.js & NPM", 88, "from-green-600 to-green-500"],
+              ["Node.js & NPM", 88, "from-yellow-500 to-yellow-400"],
               // ["WebSockets & Realtime", 68, "from-red-600 to-red-500"],
             ].map(([label, percent, gradient], i) => (
               <div key={i}>
@@ -63,35 +65,54 @@ const About = () => {
 
         {/* Grid 3 - Stats */}
         <div className="grid-glass-effect col-span-1 md:col-span-2 grid grid-cols-2 text-center items-center p-6 gap-4 rounded-2xl">
-  <div>
-    <div className="text-3xl font-bold text-aqua mb-1">10+</div>
-    <p className="text-sm text-neutral-400">Full-Stack Projects</p>
+          <div>
+            <div className="text-3xl font-bold text-aqua mb-1">10+</div>
+            <p className="text-sm text-neutral-400">Full-Stack Projects</p>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-aqua mb-1">100+</div>
+            <p className="text-sm text-neutral-400">Hours of Coding</p>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        {/* Grid 6 - CTA */}
+        <div className="grid-glass-effect col-span-1 md:col-span-6 group p-6 rounded-2xl">
+  {/* Heading */}
+  <div className="text-3xl font-bold text-aqua mb-6 border-b border-gray-700 pb-2">
+    Education
   </div>
-  <div>
-    <div className="text-3xl font-bold text-aqua mb-1">100+</div>
-    <p className="text-sm text-neutral-400">Hours of Coding</p>
+
+  {/* University Name with Logo */}
+  <div className="flex items-center gap-4 mb-3">
+    <img
+      src="assets/nsit.png"
+      alt="NSUT Logo"
+      className="w-12 h-12 rounded-full shadow-lg border border-gray-600"
+    />
+    <span className="text-2xl font-semibold text-white">
+      Netaji Subhas University of Technology
+    </span>
+  </div>
+
+  {/* Degree + Date */}
+  <div className="ml-16">
+    <p className="text-lg text-gray-300 font-medium">Bachelor of Technology – Mechanical Engineering</p>
+    <p className="text-sm text-gray-400 mb-2">SEP 2022 – MAY 2026</p>
+
+    {/* AI Achievement Badge */}
+    <div className="inline-block bg-green-900/30 text-green-300 px-3 py-1 rounded-full text-sm font-medium shadow-md">
+      *AI Elective – Grade: 10/10 CGPA
+    </div>
   </div>
 </div>
 
 
-
-
-
-
-
-        {/* Grid 4 - Currently Working */}
-        <div className="grid-glass-effect col-span-1 md:col-span-6 flex gap-4 p-6 items-start grid-gradient-purple  rounded-2xl ">
-          {/* <div className="w-12 h-12 flex items-center justify-center text-xl">🚀</div> */}
-          <div>
-            <p className="text-3xl mb-[3%] mt-[3%]">Currently Innovating</p>
-            <p className="text-xl">
-              Building real-time apps, open-source tools, and refining full-stack systems for scale.
-            </p>
-            <p className="text-xl text- text-white/60 mt-2">
-              Open to collaboration for meaningful, performance-driven tech.
-            </p>
-          </div>
-        </div>
 
         {/* Grid 5 - Tech Stack */}
         <div className="grid-glass-effect col-span-1 md:col-span-2 p-6 relative overflow-hidden  rounded-2xl">
@@ -124,6 +145,7 @@ const About = () => {
             <CopyEmailButton />
           </div>
         </div>
+       
       </div>
     </section>
   );

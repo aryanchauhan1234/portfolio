@@ -48,6 +48,15 @@ function Navigation() {
         <a
           className="hover:text-white transition-colors"
           href="#contact"
+          onClick={(e) => handleNavClick(e, 'achievements')}
+        >
+          Achievements
+        </a>
+      </li>
+      <li>
+        <a
+          className="hover:text-white transition-colors"
+          href="#contact"
           onClick={(e) => handleNavClick(e, 'contact')}
         >
           Contact
@@ -73,7 +82,7 @@ const Navbar = () => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            ARYAN
+            <img className='w-25 h-8' src="assets/name.png" alt="" />
           </a>
 
           <button
