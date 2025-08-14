@@ -21,7 +21,7 @@ export default function Achievements() {
     {
       title: "LeetCode Achiever – 350+ Problems Solved",
       description:
-        "Focused on mastering Data Structures and Algorithms with daily practice and contest participation.",
+        "Focused on mastering Data Structures and Algorithms.",
       img: "assets/leet.png",
       link: "https://leetcode.com/u/Aryan--1--/", // Replace with real LeetCode profile
     },
@@ -47,7 +47,7 @@ export default function Achievements() {
 
   return (
     <section className="min-h-screen py-12 px-6 md:px-20 mt-[15%]" id="achievements">
-      <h1 className="text-4xl font-bold text-aqua mb-10 text-center">
+      <h1 className="text-4xl font-bold  mb-10 ">
         Achievements
       </h1>
 
@@ -62,7 +62,7 @@ export default function Achievements() {
         <img
           src={item.img}
           alt={item.title}
-          className="w-60 h-60 object-contain mx-auto my-3 mb-[10%]"
+          className="rounded-xl w-60 h-60 object-contain mx-auto my-3 mb-[10%] "
         />
       )}
       <div className="flex items-center gap-3 mb-4">
@@ -89,7 +89,7 @@ export default function Achievements() {
 
 
       {/* Certificates Section */}
-      <h2 className="text-3xl font-bold text-aqua mb-8 text-center">
+      <h2 className="text-3xl font-bold mb-8">
         Certificates
       </h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
