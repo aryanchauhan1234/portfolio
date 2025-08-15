@@ -36,34 +36,31 @@ const Hero = () => {
       }
     }, 300);
   };
+
   const techIcons = [
-  "devicon-mongodb-plain colored",
-  "devicon-express-original",
-  "devicon-react-original colored",
-  "devicon-nodejs-plain colored",
-  "devicon-tailwindcss-plain colored",
-  "devicon-git-plain colored",
-];
+    "devicon-mongodb-plain colored",
+    "devicon-express-original",
+    "devicon-react-original colored",
+    "devicon-nodejs-plain colored",
+    "devicon-tailwindcss-plain colored",
+    "devicon-git-plain colored",
+  ];
 
   const navigate = useNavigate();
- const terminalLines = [
-  { type: "command", text: "$ whoami" },
-  { type: "output", text: "ARYAN - MERN Stack Developer | Competitive Programmer" },
-
-  { type: "command", text: "$ ls skills/" },
-  { type: "output", text: "MongoDB  Express.js  React.js  Node.js  TailwindCSS  REST APIs  JWT Auth" },
-
-  { type: "command", text: "$ cat passion.txt" },
-  { type: "output", text: "Building full-stack web applications ⚡" },
-  { type: "output", text: "Solving complex DSA problems 📈" },
-  { type: "output", text: "Exploring AI & Secure Messaging 🔐" },
-
-  { type: "command", text: "$ uptime" },
-  { type: "output", text: "3+ years coding experience | 1200+ DSA problems solved" },
-
-  { type: "command", text: "$ git commit -m 'Always learning, always building'" },
-];
-
+  
+  const terminalLines = [
+    { type: "command", text: "$ whoami" },
+    { type: "output", text: "ARYAN - MERN Stack Developer | Competitive Programmer" },
+    { type: "command", text: "$ ls skills/" },
+    { type: "output", text: "MongoDB  Express.js  React.js  Node.js  TailwindCSS  REST APIs  JWT Auth" },
+    { type: "command", text: "$ cat passion.txt" },
+    { type: "output", text: "Building full-stack web applications ⚡" },
+    { type: "output", text: "Solving complex DSA problems 📈" },
+    { type: "output", text: "Exploring AI & Secure Messaging 🔐" },
+    { type: "command", text: "$ uptime" },
+    { type: "output", text: "3+ years coding experience | 1200+ DSA problems solved" },
+    { type: "command", text: "$ git commit -m 'Always learning, always building'" },
+  ];
 
   const [displayedLines, setDisplayedLines] = useState([]);
   const [currentLine, setCurrentLine] = useState("");
@@ -104,7 +101,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative flex justify-center py-[12%] overflow-hidden c-space">
+    <section id="home" className=" flex-col gap-10 justify-center py-[12%] overflow-hidden c-space">
       {/* Background particles */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-aqua rounded-full animate-pulse"></div>
@@ -157,7 +154,7 @@ const Hero = () => {
                 className="absolute w-full h-full bg-gradient-to-br from-midnight/90 to-navy/80 backdrop-blur-sm border border-mint/20 rounded-2xl overflow-hidden"
                 style={{ backfaceVisibility: "hidden" }}
               >
-                 <div className="flex items-center gap-2 p-4 border-b border-white/10">
+                <div className="flex items-center gap-2 p-4 border-b border-white/10">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
@@ -215,49 +212,53 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+
       {/* Bottom Section */}
-<div className="absolute  bottom-1 w-full flex flex-col items-center gap-8  ">
-  {/* Tech stack icons */}
+      <div className="mt-[4%] w-full flex flex-col items-center gap-8">
+        {/* Tech stack icons */}
       <motion.div
-        className="flex gap-8 text-neutral-400 text-5xl"
-        initial="hidden"
-        animate="visible"
+  className="flex flex-wrap justify-center gap-8 text-neutral-400 text-5xl"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  }}
+>
+  {(window.innerWidth < 500 ? techIcons.slice(0, 5) : techIcons).map(
+    (icon, index) => (
+      <motion.i
+        key={index}
+        className={icon}
         variants={{
-          visible: {
-            transition: {
-              staggerChildren: 1.2, // delay between icons
-            },
-          },
+          hidden: { opacity: 0, y: 20, scale: 0.8 },
+          visible: { opacity: 1, y: 0, scale: 1 },
         }}
-      >
-        {techIcons.map((icon, index) => (
-          <motion.i
-            key={index}
-            className={icon}
-            variants={{
-              hidden: { opacity: 0, y: 20, scale: 0.8 },
-              visible: { opacity: 1, y: 0, scale: 1 },
-            }}
-            transition={{ type: "spring", stiffness: 100, damping: 10 }}
-          />
-        ))}
-      </motion.div>
+        transition={{ type: "spring", stiffness: 100, damping: 10 }}
+      />
+    )
+  )}
+</motion.div>
 
-  {/* Scroll down hint */}
-  <div className="flex flex-col items-center text-aqua text-xl animate-bounce ">
-    {/* <span>Scroll Down</span> */}
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-5 w-5 mt-1"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-  </div>
-</div>
 
+
+
+        {/* Scroll down hint */}
+        <div className="flex flex-col items-center text-aqua text-xl animate-bounce">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 mt-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </div>
     </section>
   );
 };
