@@ -45,13 +45,14 @@ subDescription: [
   {
     id: 2,
     title: "CodbaseX",
-    description: "Real-time coding battle platform with test case evaluation and AI-powered features",
+    description: "Real-time competitive programming tracker with detailed analytics and AI-powered insights",
 subDescription: [
-  "Built using MERN stack with WebSocket integration for live battles",
-  "Custom code editor with syntax highlighting and multi-language support",
-  "Automated judge system to evaluate code against hidden test cases",
-  "Battle rooms with secure access, leaderboard, and result history",
-  "AI features like smart summaries, coding tips, and self-destructing messages"
+"Real-time statistics on problems solved, ratings, and contest history.",
+"Detailed topic-wise insights to identify strengths and weaknesses.",
+"Streak and milestone tracking to stay motivated.",
+"Visual analytics such as heatmaps, charts, and leaderboards.",
+"Friend comparison features to measure growth alongside peers.",
+"Event tracker for upcoming contests with calendar integration."
 ],
 
     href: "https://github.com/aryanchauhan1234/codbaseX",

@@ -3,26 +3,26 @@ import { Star, Medal } from "lucide-react";
 
 export default function Achievements() {
   const achievements = [
-    {
-      title: "AI Elective – 10/10 CGPA",
-      description:
-        "Scored a perfect grade in Artificial Intelligence elective, showcasing strong analytical and programming skills.",
-      icon: <Star className="w-6 h-6 text-yellow-400" />,
-      img: "assets/ai.jpg",
-    //   link: "https://example.com/ai-certificate", // Replace with real link
-    },
+    // {
+    //   title: "AI Elective – 10/10 CGPA",
+    //   description:
+    //     "Scored a perfect grade in Artificial Intelligence elective, showcasing strong analytical and programming skills.",
+    //   icon: <Star className="w-6 h-6 text-yellow-400" />,
+    //   img: "assets/ai.jpg",
+    // //   link: "https://example.com/ai-certificate", // Replace with real link
+    // },
     {
       title: "Codeforces – 1331 Rating",
       description:
         "Solved 685+ problems and participated in 50+ rated contests, consistently improving problem-solving skills.",
-      img: "assets/cf.png",
+      img: "assets/cfpro.png",
       link: "https://codeforces.com/profile/THE_ArYaN_CoDeR", // Replace with real CF profile
     },
     {
       title: "LeetCode Achiever – 350+ Problems Solved",
       description:
         "Focused on mastering Data Structures and Algorithms.",
-      img: "assets/leet.png",
+      img: "assets/leetpro.png",
       link: "https://leetcode.com/u/Aryan--1--/", // Replace with real LeetCode profile
     },
   ];
@@ -48,7 +48,7 @@ export default function Achievements() {
   return (
     <section className="min-h-screen py-12 px-6 md:px-20 mt-[15%]" id="achievements">
       <h1 className="text-4xl font-bold  mb-10 ">
-        Achievements
+        Coding Profiles
       </h1>
 
       {/* Achievements Grid */}
@@ -60,10 +60,11 @@ export default function Achievements() {
     >
       {item.img && (
         <img
-          src={item.img}
-          alt={item.title}
-          className="rounded-xl w-60 h-60 object-contain mx-auto my-3 mb-[10%] "
-        />
+  src={item.img}
+  alt={item.title}
+  className="rounded-xl w-80 h-50 object-contain mx-auto my-3 mb-[10%] bg-white"
+/>
+
       )}
       <div className="flex items-center gap-3 mb-4">
         {item.icon}
@@ -100,10 +101,10 @@ export default function Achievements() {
     >
       {item.img && (
         <img
-          src={item.img}
-          alt={item.title}
-          className="w-60 h-60 object-contain mx-auto my-3 mb-[10%]"
-        />
+  src={item.img}
+  alt={item.title}
+  className="rounded-xl w-80 h-60 object-contain mx-auto my-3 mb-[10%] bg-white"
+/>
       )}
       <div className="flex items-center gap-3 mb-4">
         {item.icon}
