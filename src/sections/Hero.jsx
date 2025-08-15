@@ -59,7 +59,6 @@ const Hero = () => {
     { type: "output", text: "Exploring AI & Secure Messaging 🔐" },
     { type: "command", text: "$ uptime" },
     { type: "output", text: "3+ years coding experience | 1200+ DSA problems solved" },
-    { type: "command", text: "$ git commit -m 'Always learning, always building'" },
   ];
 
   const [displayedLines, setDisplayedLines] = useState([]);
@@ -170,7 +169,7 @@ const Hero = () => {
 
               {/* Back Side (Terminal) */}
               <div
-                className="absolute w-full h-full bg-gradient-to-br from-midnight/90 to-navy/80 backdrop-blur-sm border border-mint/20 rounded-2xl overflow-hidden"
+                className="absolute w-full h-full  bg-gradient-to-br from-midnight/90 to-navy/80 backdrop-blur-sm border border-mint/20 rounded-2xl overflow-hidden"
                 style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
               >
                 <button
@@ -214,7 +213,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-[4%] w-full flex flex-col items-center gap-8">
+      <div className="mt-[4%] sm:mt-[10%] md:mt-[4%] lg:mt-[4%] w-full flex flex-col items-center gap-8">
         {/* Tech stack icons */}
       <motion.div
   className="flex flex-wrap justify-center gap-8 text-neutral-400 text-5xl"
@@ -223,12 +222,12 @@ const Hero = () => {
   variants={{
     visible: {
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 1,
       },
     },
   }}
 >
-  {(window.innerWidth < 500 ? techIcons.slice(0, 5) : techIcons).map(
+  {(window.innerWidth < 500 ? techIcons.slice(0, 4) : techIcons).map(
     (icon, index) => (
       <motion.i
         key={index}
