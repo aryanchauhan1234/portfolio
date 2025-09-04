@@ -19,7 +19,7 @@ export default function Achievements() {
       link: "https://codeforces.com/profile/THE_ArYaN_CoDeR", // Replace with real CF profile
     },
     {
-      title: "LeetCode Achiever – 350+ Problems Solved",
+      title: "LeetCode Achiever – 500+ Problems Solved",
       description:
         "Focused on mastering Data Structures and Algorithms.",
       img: "assets/leetpro.png",
