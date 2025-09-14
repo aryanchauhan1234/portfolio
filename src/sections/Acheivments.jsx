@@ -23,7 +23,15 @@ export default function Achievements() {
       description:
         "Focused on mastering Data Structures and Algorithms.",
       img: "assets/leetpro.png",
-      link: "https://leetcode.com/u/Aryan--1--/", // Replace with real LeetCode profile
+      link: "https://leetcode.com/u/Aryan--1--/", 
+    },
+    {
+      title: "Codolio – Global Rank 1120",
+      description:
+        "Codolio aggregates my profiles (CF, LC, GFG etc.) with a current global rank of 1120.
+",
+      img: "assets/codolio.png",
+      link: "https://codolio.com/profile/aryann", 
     },
   ];
 
