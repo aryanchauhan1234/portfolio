@@ -28,8 +28,7 @@ export default function Achievements() {
     {
       title: "Codolio – Global Rank 1120",
       description:
-        "Codolio aggregates my profiles (CF, LC, GFG etc.) with a current global rank of 1120.
-",
+        "Codolio aggregates my profiles (CF, LC, GFG etc.) with a current global rank of 1120.",
       img: "assets/codolio.png",
       link: "https://codolio.com/profile/aryann", 
     },
